@@ -3,16 +3,21 @@ import Home from './pages/Home';
 import Imoveis from './pages/Imoveis';
 import Historia from './pages/Historia';
 import Footer from "./components/Footer";
+import Indie from './components/Indie'; // Importando o Indie
 
 function App() {
   return (
     <Router>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/imoveis" element={<Imoveis />} />
-                <Route path="/historia" element={<Historia />} />
-              </Routes>
-              <Footer />
+      {/* Indie aparece em todas as páginas */}
+      <Indie />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/imoveis" element={<Imoveis />} />
+        <Route path="/historia" element={<Historia />} />
+      </Routes>
+
+      <Footer />
     </Router>
   );
 }
