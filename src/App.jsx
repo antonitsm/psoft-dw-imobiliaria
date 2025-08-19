@@ -2,15 +2,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Imoveis from './pages/Imoveis';
 import Historia from './pages/Historia';
-import Footer from "./components/Footer";
-import Indie from './components/Indie'; // Importando o Indie
+import Footer from './components/Footer';
 
 function App() {
   return (
     <Router>
-      {/* Indie aparece em todas as páginas */}
-      <Indie />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/imoveis" element={<Imoveis />} />
