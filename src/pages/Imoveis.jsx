@@ -1,24 +1,5 @@
 import React from 'react';
-import { Button } from '@radix-ui/react-button'; 
 import './App.css'; 
-
-
-import house1 from './assets/fsysD159ZRSW.jpg';
-import house2 from './assets/G39vNzmGOGwc.jpg';
-import house3 from './assets/HDAva3Y4Geqd.jpg';
-import house4 from './assets/h0aEc4ufm23w.jpg';
-import house5 from './assets/7ZAs3QSqRuMA.jpeg';
-import house6 from './assets/WLX0xHDJpdla.jpg';
-
-
-import interior1 from './assets/mIsuEe1O2gqr.jpeg';
-import interior2 from './assets/Wl3XnUKZxVBm.jpg';
-import interior3 from './assets/5NDZmqHLsUDh.jpg';
-import interior4 from './assets/IRGeGASZAx36.jpg';
-import interior5 from './assets/EJwDuszlO2H3.jpg';
-import interior6 from './assets/WVhBxIvIgMEv.jpg';
-import interior7 from './assets/2CCQ9UuFYC1I.png';
-import interior8 from './assets/YZu5GEDK8mMt.jpg';
 
 const Imoveis = () => {
   
@@ -32,7 +13,7 @@ const Imoveis = () => {
       vagas: 2,
       area: "350 m²",
       endereco: "Rua das Palmeiras, 123",
-      imagem: house1
+      imagem: '/img/casa1.png.jpg'
     },
     {
       id: 2,
@@ -43,7 +24,7 @@ const Imoveis = () => {
       vagas: 3,
       area: "450 m²",
       endereco: "Av. Central, 456",
-      imagem: house2
+      imagem: '/img/casa2.jpg'
     },
     {
       id: 3,
@@ -54,7 +35,7 @@ const Imoveis = () => {
       vagas: 2,
       area: "280 m²",
       endereco: "Rua do Sol, 789",
-      imagem: house3
+      imagem: '/img/casa3.jpg'
     },
     {
       id: 4,
@@ -65,7 +46,7 @@ const Imoveis = () => {
       vagas: 2,
       area: "220 m²",
       endereco: "Rua Verde, 321",
-      imagem: house4
+      imagem: '/img/casa4.jpg'
     },
     {
       id: 5,
@@ -73,10 +54,10 @@ const Imoveis = () => {
       preco: "R$ 1.800.000",
       quartos: 4,
       banheiros: 3,
-      vagas: 4, 
+      vagas: 4,
       area: "500 m²",
       endereco: "Estrada Rural, 654",
-      imagem: house5
+      imagem: '/img/casa5.jpg'
     },
     {
       id: 6,
@@ -87,18 +68,18 @@ const Imoveis = () => {
       vagas: 2,
       area: "180 m²",
       endereco: "Av. Beira Mar, 987",
-      imagem: house6
+      imagem: '/img/casa6.jpg'
     }
   ];
 
-
+  // Imagens de interiores
   const imagensInteriores = [
-    interior1, interior2, interior3, interior4, interior5, 
-    interior6, interior7, interior8
+    '/imagem/interior1.png', '/imagem/interior2.png', '/imagem/interior3.png', '/imagem/interior4.png', '/imagem/interior5.png',
+    '/imagem/interior6.png', '/imagem/interior7.png', '/imagem/interior8.png'
   ];
 
   
-  const imagensExteriores = [house1, house2, house3];
+  const imagensExteriores = ['/img/casa7.jpg', '/img/casa8.jpg', '/img/casa9.jpg'];
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -148,9 +129,9 @@ const Imoveis = () => {
                     <p><strong>Endereço:</strong> {imovel.endereco}</p>
                   </div>
                   
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                  <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded">
                     DETALHES
-                  </Button>
+                  </button>
                 </div>
               </div>
             ))}
@@ -197,9 +178,9 @@ const Imoveis = () => {
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
                   <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Button className="bg-white text-gray-800 hover:bg-gray-100">
+                    <button className="bg-white text-gray-800 hover:bg-gray-100 py-2 px-4 rounded">
                       Ver Detalhes
-                    </Button>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -213,9 +194,9 @@ const Imoveis = () => {
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h3 className="text-2xl font-bold mb-4">Entre em Contato</h3>
           <p className="mb-4">Encontre o imóvel perfeito para você</p>
-          <Button className="bg-blue-600 hover:bg-blue-700">
+          <button className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded">
             Fale Conosco
-          </Button>
+          </button>
         </div>
       </footer>
     </div>
