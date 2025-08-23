@@ -18,6 +18,13 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+body {
+  background-color: #f0f0f0; /* Um tom de cinza claro, similar ao da imagem */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Uma fonte limpa e moderna */
+  margin: 0;
+  padding: 0;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
