@@ -1,15 +1,13 @@
 import React from 'react';
 
 const Imoveis = () => {
-  // Lista de imóveis disponíveis
-  // 🔹 Importante: todos os caminhos das imagens partem da pasta "public/img"
   const imoveisDisponiveis = [
     {
       id: 1,
       titulo: "LOUNGE",
       preco: "R$ 1.200.000",
       endereco: "Florianópolis - Centro",
-      imagem: '/img/casa1.jpg' // Corrigido (antes estava .png.jpg)
+      imagem: '/img/casa1.jpg'
     },
     {
       id: 2,
@@ -51,7 +49,7 @@ const Imoveis = () => {
       titulo: "LOUNGE",
       preco: "R$ 2.100.000",
       endereco: "Chapecó - Água Santa",
-      imagem: '/img/casa1.jpg' // Pode repetir a imagem, mas confira se é essa mesmo
+      imagem: '/img/casa1.jpg'
     },
     {
       id: 8,
@@ -69,11 +67,10 @@ const Imoveis = () => {
     }
   ];
 
-  // 🔹 Corrigido: antes estava "/imagem/", agora é "/img/"
   const imagensInteriores = [
-    '/img/interior1.jpg', '/img/interior2.png', '/img/interior3.png', '/img/interior4.png',
-    '/img/interior5.png', '/img/interior6.png', '/img/interior7.png', '/img/interior8.png',
-    '/img/interior9.png', '/img/interior10.png', '/img/interior11.png', '/img/interior12.png'
+    '/img/interior1.jpeg', '/img/interior2.jpeg', '/img/interior3.jpeg', '/img/interior4.jpeg',
+    '/img/interior5.jpeg', '/img/interior6.jpeg', '/img/interior7.jpeg', '/img/interior8.jpeg',
+    '/img/interior9.jpeg', '/img/interior10.jpeg', '/img/interior11.jpeg', '/img/interior12.jpeg'
   ];
 
   const imagensExteriores = [
@@ -92,33 +89,21 @@ const Imoveis = () => {
             IMÓVEIS DISPONÍVEIS
           </h2>
 
-          {/* Grid de cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {imoveisDisponiveis.map((imovel) => (
               <div key={imovel.id} className="bg-white rounded-md shadow-sm overflow-hidden text-left flex flex-col">
-                
-                {/* Imagem do imóvel */}
                 <img
+                  id={`imovel-img-${imovel.id}`}
                   src={imovel.imagem}
                   alt={imovel.titulo}
                   className="w-full h-48 object-cover"
                 />
-
-                {/* Conteúdo do Card */}
                 <div className="p-4 flex-grow flex flex-col">
                   <div className="flex-grow">
-                    <h3 className="text-md font-semibold text-gray-800">
-                      {imovel.titulo}
-                    </h3>
-                    <p className="text-gray-500 text-sm">
-                      {imovel.endereco}
-                    </p>
-                    <p className="text-gray-800 font-bold mt-1">
-                      {imovel.preco}
-                    </p>
+                    <h3 className="text-md font-semibold text-gray-800">{imovel.titulo}</h3>
+                    <p className="text-gray-500 text-sm">{imovel.endereco}</p>
+                    <p className="text-gray-800 font-bold mt-1">{imovel.preco}</p>
                   </div>
-
-                  {/* Botão de detalhes */}
                   <button className="mt-4 w-full bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs py-2 px-4 rounded-sm font-bold">
                     DETALHES
                   </button>
@@ -129,57 +114,45 @@ const Imoveis = () => {
         </div>
       </section>
 
-      {/* Seção de Interiores */}
-      <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
-            INTERIORES
-          </h2>
+     {/* Seção de Interiores */}
+<section className="py-12 bg-white">
+  <div className="max-w-7xl mx-auto px-4">
+    <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">INTERIORES</h2>
 
-          {/* Grid de interiores */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {imagensInteriores.slice(0, 8).map((imagem, index) => (
-              <div key={index} className="relative group overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                <img
-                  src={imagem}
-                  alt={`Interior ${index + 1}`}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300"></div>
-              </div>
-            ))}
-          </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      {imagensInteriores.slice(0, 8).map((imagem, idx) => (
+        <div key={idx} className="bg-white rounded-md shadow-sm overflow-hidden">
+          <img
+            id={`interior-img-${idx + 1}`}
+            src={imagem}
+            alt={`Interior ${idx + 1}`}
+            className="w-full h-48 object-cover"
+          />
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
-      {/* Seção de Exteriores */}
-      <section className="py-12 bg-gray-100">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
-            EXTERIORES
-          </h2>
+{/* Seção de Exteriores */}
+<section className="py-12 bg-gray-100">
+  <div className="max-w-7xl mx-auto px-4">
+    <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">EXTERIORES</h2>
 
-          {/* Grid de exteriores */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {imagensExteriores.map((imagem, index) => (
-              <div key={index} className="relative group overflow-hidden rounded-lg shadow-lg">
-                <img
-                  src={imagem}
-                  alt={`Exterior ${index + 1}`}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <button className="bg-white text-gray-800 hover:bg-gray-100 py-2 px-4 rounded">
-                      Ver Detalhes
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {imagensExteriores.map((imagem, idx) => (
+        <div key={idx} className="bg-white rounded-md shadow-sm overflow-hidden">
+          <img
+            id={`exterior-img-${idx + 1}`}
+            src={imagem}
+            alt={`Exterior ${idx + 1}`}
+            className="w-full h-64 object-cover"
+          />
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
     </div>
   );
