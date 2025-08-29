@@ -71,7 +71,7 @@ const Imoveis = () => {
 
   // 🔹 Corrigido: antes estava "/imagem/", agora é "/img/"
   const imagensInteriores = [
-    '/img/interior1.png', '/img/interior2.png', '/img/interior3.png', '/img/interior4.png',
+    '/img/interior1.jpg', '/img/interior2.png', '/img/interior3.png', '/img/interior4.png',
     '/img/interior5.png', '/img/interior6.png', '/img/interior7.png', '/img/interior8.png',
     '/img/interior9.png', '/img/interior10.png', '/img/interior11.png', '/img/interior12.png'
   ];
